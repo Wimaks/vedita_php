@@ -1,8 +1,7 @@
 <?php
 
-
 class CProducts{    
- 
+
     private $products;
 
     public function __construct($products=NULL){
@@ -35,14 +34,14 @@ class CProducts{
                <th>Дата добавления</th>
                <th>Скрытие</th>
             </tr>";
-        while ($row=mysqli_fetch_array($result)) {
-          echo "<tr id=$row[0]>
+        while ($row = mysqli_fetch_array($result)) {
+          echo "<tr id = $row[0]>
           <td>$row[0]</td>
           <td>$row[1]</td>
           <td>$row[2]</td>
           <td>$row[3]</td>
           <td>$row[4]</td>
-          <td><button id=minus>-</button><span>$row[5]</span><button id=plus>+</button></td>
+          <td><button onclick=decrease($row[0])>-</button><span>$row[5]</span><button onclick=increase($row[0])>+</button></td>
           <td>$row[6]</td>
           <td><button onclick=hide_row($row[0])>Скрыть</button></td>
         </tr>";
